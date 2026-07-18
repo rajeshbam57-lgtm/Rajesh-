@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Kathmandu Restaurant</title>
+
+<link rel="stylesheet" href="Style.css">
+
+</head>
+
+
+<body>
+
+<header>
+    <img src="Logo.png" alt="Kathmandu Restaurant Logo" class="logo">
+
+    <h1>Kathmandu Restaurant</h1>
+
+    <p>🍛 Indian • 🫓 Punjabi • 🍜 Chinese Food</p>
+
+    <p class="tagline">Fresh & Delicious Parcel Delivery</p>
+</header>
+
+<div id="cart">
+    🛒 Cart (<span id="cartCount">0</span>)
+</div>
+
+<section>
+
+<h2>Welcome</h2>
+
+<p>Fresh & Delicious Food Delivered Fast.</p>
+
+<div class="tabs">
+    <button onclick="filterFood('all')">All</button>
+    <button onclick="filterFood('veg')">Veg</button>
+    <button onclick="filterFood('paneer')">Paneer</button>
+    <button onclick="filterFood('chinese')">Chinese</button>
+</div>
+
+<input
+type="text"
+id="search"
+placeholder="🔍 Search Food">
+
+<div class="items">
+
+<!-- MIX VEG -->
+
+<div class="food veg">
+
+<img loading="lazy" src="mix-veg.png" alt="Mix Veg">
+
+<h3>Mix Veg</h3>
+
+<p>₹110</p>
+
+<div class="qty">
+
+<button onclick="changeQty('Mix Veg',110,-1)">-</button>
+
+<span id="qty-Mix Veg">0</span>
+
+<button onclick="changeQty('Mix Veg',110,1)">+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CHANA MASALA -->
+
+<div class="food veg">
+
+<img src="Chana - Masala.png" alt="Chana Masala">
+
+<h3>Chana Masala</h3>
+
+<p>₹110</p>
+
+<div class="qty">
+
+<button onclick="changeQty('Chana Masala',110,-1)">-</button>
+
+<span id="qty-Chana Masala">0</span>
+
+<button onclick="changeQty('Chana Masala',110,1)">+</button>
+
+</div>
+
+</div>
+
+<!-- ALOO MATAR -->
+
+<div class="food veg">
+
+<img src="Aloo - Matar.png">
+
+<h3>Aloo Matar</h3>
+
+<p>₹110</p>
+
+<div class="qty">
+
+<button onclick="changeQty('Aloo Matar',110,-1)">-</button>
+
+<span id="qty-Aloo Matar">0</span>
+
+<button onclick="changeQty('Aloo Matar',110,1)">+</button>
+
+</div>
+
+</div>
+
+<!-- PANEER BUTTER MASALA -->
+
+<div class="food paneer">
+
+<img src="paneer-butter-masala.png" alt="Paneer Butter Masala">
+
+<h3>Paneer Butter Masala</h3>
+
+<p>₹170</p>
+
+<div class="qty">
+
+<button onclick="changeQty('Paneer Butter Masala',170,-1)">-</button>
+
+<span id="qty-Paneer Butter Masala">0</span>
+
+<button onclick="changeQty('Paneer Butter Masala',170,1)">+</button>
+
+</div>
+
+</div>
+<!-- PANEER TIKKA MASALA -->
+
+<div class="food paneer">
+
+<img src="Paneer - Tikka - Masala.png" alt="Paneer Tikka Masala">
+
+<h3>Paneer Tikka Masala</h3>
+
+<p>₹160</p>
+
+<div class="qty">
+
+<button onclick="changeQty('Paneer Tikka Masala',160,-1)">-</button>
+
+<span id="qty-Paneer Tikka Masala">0</span>
+
+<button onclick="changeQty('Paneer Tikka Masala',160,1)">+</button>
+
+</div>
+</div>
+
+<!-- CHICKEN CHILLI -->
+
+<div class="food chinese">
+    <img src="Chicken-chilli.png" alt="Chicken Chilli">
+    <h3>Chicken Chilli (With Bone)</h3>
+    <p>₹150</p>
+
+    <div class="qty">
+        <button onclick="changeQty('Chicken Chilli (With Bone)',150,-1)">-</button>
+        <span id="qty-Chicken Chilli (With Bone)">0</span>
+        <button onclick="changeQty('Chicken Chilli (With Bone)',150,1)">+</button>
+    </div>
+</div>
+
+</div>
+
+<!-- CHICKEN 65 -->
+
+<div class="food chinese">
+
+<img src="Chicken-65.png" alt="Chicken 65">
+
+<h3>Chicken 65</h3>
+
+<p>₹150</p>
+
+<div class="qty">
+
+<button onclick="changeQty('Chicken 65',150,-1)">-</button>
+
+<span id="qty-Chicken 65">0</span>
+
+<button onclick="changeQty('Chicken 65',150,1)">+</button>
+
+</div>
+
+</div>
+
+<!-- CHICKEN LOLLIPOP DRY -->
+
+<div class="food chinese">
+
+    <img src="Chicken-Lollipop-Dry.png" alt="Chicken Lollipop Dry">
+
+    <h3>Chicken Lollipop Dry</h3>
+
+    <p>₹120</p>
+
+    <div class="qty">
+        <button onclick="changeQty('Chicken Lollipop Dry',120,-1)">-</button>
+
+        <span id="qty-Chicken Lollipop Dry">0</span>
+
+        <button onclick="changeQty('Chicken Lollipop Dry',120,1)">+</button>
+    </div>
+
+</div>
+
+</div>
+
+<!-- CHICKEN LOLLIPOP GRAVY -->
+
+<div class="food chinese">
+
+<img src="Chicken-Lollipop-Gravy.png" alt="Chicken Lollipop Gravy">
+
+<h3>Chicken Lollipop Gravy</h3>
+
+<p>₹140</p>
+
+<div class="qty">
+
+<button onclick="changeQty('Chicken Lollipop Gravy',140,-1)">-</button>
+
+<span id="qty-Chicken Lollipop Gravy">0</span>
+
+<button onclick="changeQty('Chicken Lollipop Gravy',140,1)">+</button>
+
+</div>
+
+</div>
+
+</div>
+<div class="customer-box">
+
+<h2>Customer Details</h2>
+
+<input
+type="text"
+id="custName"
+placeholder="👤 Your Name">
+
+<input
+type="tel"
+id="custPhone"
+placeholder="📞 Mobile Number">
+
+<textarea
+id="custAddress"
+placeholder="📍 Delivery Address"></textarea>
+
+</div>
+
+<div class="contact-buttons">
+
+<a href="tel:8866222298">
+<button>📞 Call Now</button>
+</a>
+
+<a href="https://wa.me/918866222298">
+<button>💬 WhatsApp</button>
+</a>
+
+</div>
+
+<section class="contact">
+
+<h2>Contact Us</h2>
+
+<p>📍 Kathmandu Restaurant</p>
+
+<p>Hazira, Surat</p>
+
+<p>🕙 10:00 AM – 11:00 PM</p>
+
+<p>🚚 Parcel Delivery Available</p>
+<p>📍
+<a href="https://www.google.com/maps/place/Kathmandu+Restaurant,+Hazira" target="_blank">
+    📍 Open Google Maps
+</a>
+    </p>
+
+</section>
+
+<footer>
+
+<p>© Kathmandu Restaurant</p>
+
+<p>Thank You For Visiting 🙏</p>
+
+</footer>
+
+<div id="bottomCart">
+
+<div>
+
+Items: <span id="count">0</span> |
+
+₹<span id="total">0</span>
+
+</div>
+
+<button onclick="sendWhatsApp()">
+
+Order on WhatsApp
+
+</button>
+
+</div>
+<script>
+
+let cart = {};
+
+function changeQty(item, price, change) {
+
+    if (!cart[item]) {
+        cart[item] = {
+            qty: 0,
+            price: price
+        };
+    }
+
+    cart[item].qty += change;
+
+    if (cart[item].qty < 0) {
+        cart[item].qty = 0;
+    }
+
+    document.getElementById("qty-" + item).innerHTML = cart[item].qty;
+
+    let total = 0;
+    let count = 0;
+
+    for (let i in cart) {
+        total += cart[i].qty * cart[i].price;
+        count += cart[i].qty;
+    }
+
+    document.getElementById("cartCount").innerHTML = count;
+    document.getElementById("count").innerHTML = count;
+    document.getElementById("total").innerHTML = total;
+}
+
+function sendWhatsApp() {
+
+    let total = 0;
+    let msg = "Hello Kathmandu Restaurant%0A%0AMy Order:%0A";
+    let hasItem = false;
+
+    for (let item in cart) {
+
+        if (cart[item].qty > 0) {
+
+            hasItem = true;
+
+            msg += item + " x " + cart[item].qty +
+            " = ₹" + (cart[item].qty * cart[item].price) + "%0A";
+
+            total += cart[item].qty * cart[item].price;
+        }
+    }
+
+    if (!hasItem) {
+        alert("Cart Empty!");
+        return;
+    }
+
+    
+    let name=document.getElementById("custName").value;
+    let phone=document.getElementById("custPhone").value;
+    let address=document.getElementById("custAddress").value;
+
+    msg += "%0A%0AName: " + encodeURIComponent(name);
+    msg += "%0APhone: " + encodeURIComponent(phone);
+    msg += "%0AAddress: " + encodeURIComponent(address);
+    msg += "%0A%0ATotal = ₹" + total;
+
+    window.open("https://wa.me/918866222298?text=" + msg);
+
+}
+
+document.getElementById("search").addEventListener("keyup", function () {
+
+    let value = this.value.toLowerCase();
+
+    document.querySelectorAll(".food").forEach(function (item) {
+
+        item.style.display =
+        item.innerText.toLowerCase().includes(value)
+        ? "block"
+        : "none";
+
+    });
+
+});
+
+function filterFood(type) {
+
+    document.querySelectorAll(".food").forEach(function (item) {
+
+        if (type == "all") {
+
+            item.style.display = "block";
+
+        } else {
+
+            item.style.display =
+            item.classList.contains(type)
+            ? "block"
+            : "none";
+        }
+
+    });
+
+}
+
+</script>
+
+</section>
+
+</body>
+
